@@ -1,6 +1,6 @@
 # 📚 Biblioteca Detodito
 
-**Biblioteca Detodito** es una aplicación web interactiva desarrollada como proyecto final del módulo de fundamentos de programación. Su propósito es permitir la exploración de libros organizados por categorías, destacando títulos recomendados y ofreciendo una experiencia visual atractiva, responsiva y dinámica.
+**Biblioteca Detodito** es una aplicación web interactiva desarrollada como primer proyecto para el diplomado de desarrollo web. Su propósito es permitir la exploración de libros organizados por categorías, destacando títulos recomendados y ofreciendo una experiencia visual atractiva, responsiva y dinámica.
 
 ---
 
