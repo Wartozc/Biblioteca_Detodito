@@ -1,50 +1,89 @@
-# Primer-proyecto---DDW
+# 📚 Biblioteca Detodito
 
-## Guía del proyecto
-    Este proyecto final tiene como objetivo consolidar los conocimientos adquiridos durante el módulo de fundamentos de programación, aplicando HTML, CSS, Bootstrap y JavaScript en el desarrollo de una aplicación web interactiva. Además de reforzar la lógica de programación y la estructura del código, este desafío permite a los estudiantes practicar trabajo en equipo (opcional), organización de proyectos y control de versiones a través de GitHub.
+**Biblioteca Detodito** es una aplicación web interactiva desarrollada como proyecto final del módulo de fundamentos de programación. Su propósito es permitir la exploración de libros organizados por categorías, destacando títulos recomendados y ofreciendo una experiencia visual atractiva, responsiva y dinámica.
 
-## Objetivo general
-    Desarrollar una aplicación web interactiva aplicando HTML, CSS, Bootstrap y JavaScript, asegurando un diseño responsivo y funcionalidades dinámicas.
+---
 
-### Objetivos específicos
-    ✅ Implementar lógica de programación en JavaScript para interactividad y manejo de datos.
+## 🚀 Funcionalidades
 
-    ✅ Aplicar HTML, CSS y Bootstrap para un diseño responsivo y estructurado.
+- 🔍 Filtro por categorías
+- 🌟 Vista de libros destacados
+- 📷 Galería visual con miniaturas
+- 📝 Modal de detalle con información del libro
+- 📬 Formulario de contacto validado
+- 📱 Diseño responsivo con Bootstrap
+- 🔁 Manejo dinámico de datos con JavaScript
 
-    ✅ Desarrollar habilidades de resolución de problemas mediante la implementación de funcionalidades dinámicas.
+---
 
-    ✅ Fomentar el trabajo en equipo y la organización de tareas en el desarrollo del proyecto.
+## 🧱 Tecnologías Utilizadas
 
-## Instrucciones
-    ✅ Estructura HTML: Usa etiquetas semánticas como <header>, <main>, <section>, y <footer>.
+- HTML5 (estructura semántica)
+- CSS3
+- Bootstrap 5 (estilos responsivos)
+- JavaScript (lógica e interactividad)
+- Git & GitHub (control de versiones y despliegue)
 
-    ✅ Páginas requeridas:
+---
 
-## Inicio: Destacados y categorías.
-    Galería: Vista general con miniaturas y filtros.
-    Detalle de imagen: Vista ampliada con descripción y autor.
-    Sobre nosotros: Información de los autores con formulario de contacto.
-    Estilos CSS y Bootstrap
-    ✅ Define una paleta de colores y una tipografía coherente.
+## 📁 Estructura de Archivos
 
-    ✅ Usa Bootstrap para crear un diseño responsivo.
+│
+├── index.html
+├── styles.css
+├── script.js
+├── assets/nombre_imagen
 
-    ✅ Aplica estilos a los elementos:
 
-    Fondo, márgenes, padding y alineación de texto.
-    Estilos para las miniaturas de la galería.
-    Estilos para el formulario de contacto.
-    Lógica en JavaScript
-    ✅ Implementa funciones para:
-    
-    Filtrar las imágenes por categoría.
-    Mostrar la vista detallada de una imagen.
-    Validar el formulario de contacto.
-    Publicación en GitHub
-    ✅ Crea un repositorio en GitHub con el nombre del proyecto.
-    
-    ✅ Sube los archivos (index.html, styles.css, script.js, carpeta assets) al repositorio.
-    
-    ✅ Asegúrate de incluir un archivo README.md con una breve descripción del proyecto.
-    
-    ✅ Publica el proyecto con GitHub Pages.
+---
+
+## 🧠 Organización del Código
+
+### HTML
+Estructura organizada en secciones:
+- `<header>` con navegación
+- `<main>` con filtros y galería de libros
+- `<footer>` con sección "Sobre Nosotros" y formulario
+
+### CSS y Bootstrap
+- Bootstrap para diseño responsivo y componentes
+- Estilos personalizados en `styles.css` para mejorar estética
+
+### JavaScript
+- `filtrarPorCategoria()`: Filtra libros por categoría
+- `filtrarDestacados()`: Muestra solo los libros marcados como destacados
+- `mostrarDetalle(index)`: Muestra un modal con la información completa del libro
+- `validarFormulario()`: Valida que el formulario de contacto esté completo
+- `inicializarBiblioteca(data)`: Inicializa y carga los libros
+- `renderizarGaleria(libros)`: Dibuja la galería de libros en pantalla
+
+---
+
+## 🧪 Validaciones y Modal
+
+- Se incluye una validación básica para el formulario de contacto
+- Al hacer clic sobre una imagen del libro, se muestra un modal con su:
+  - Imagen
+  - Título
+  - Autor
+  - Año
+  - Descripción
+
+---
+
+## 🌐 Publicación
+
+Este proyecto ha sido publicado con GitHub Pages y puede ser accedido desde:
+
+👉 **[https://tusuario.github.io/biblioteca-detodito](https://tusuario.github.io/biblioteca-detodito)**  
+
+---
+
+## 👨‍💻 Autor
+
+**Walther Zapata Casas**  
+Desarrollador de software apasionado por la tecnología, la educación y la literatura.
+
+---
+
+

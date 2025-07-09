@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Detodito</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-dark text-white p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="m-0">Biblioteca Detodito</h1>
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="#" onclick="filtrarDestacados()">Destacados</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#" onclick="mostrarTodasCategorias()">Categorías</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <section id="filtros" class="mb-4">
+      <select id="categoriaFiltro" class="form-select" onchange="filtrarPorCategoria()">
+        <option value="">Todas las categorías</option>
+      </select>
+    </section>
+
+    <section id="galeria" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center p-3">
+    <main class="container my-5">
+      <section class="mb-5">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos un equipo apasionado por la literatura y la tecnología. Detodito nació como una iniciativa para compartir libros de diversas categorías con una interfaz atractiva e interactiva. Nuestro objetivo es fomentar la lectura a través de herramientas digitales que faciliten el acceso y descubrimiento de nuevas obras.</p>
+      </section>
+
+      <section>
+        <h3>Contáctanos</h3>
+        <form id="formularioContacto" class="row g-3" onsubmit="return validarFormulario()">
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="col-12">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+     <p>&copy; 2025 Biblioteca Detodito -  Walther Zapata Casas. Todos los derechos reservados.</p>
+
+  </footer>
+
+  <div class="modal fade" id="modalLibro" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitulo"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img id="modalImagen" src="" alt="Libro" class="img-fluid rounded">
+            </div>
+            <div class="col-md-8">
+              <p><strong>Autor:</strong> <span id="modalAutor"></span></p>
+              <p><strong>Año:</strong> <span id="modalAnio"></span></p>
+              <p id="modalDescripcion"></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
