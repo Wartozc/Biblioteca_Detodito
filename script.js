@@ -415,7 +415,6 @@ const libros = [
   }
 ];
 
-
 document.addEventListener("DOMContentLoaded", () => {
   inicializarBiblioteca(libros);
 });
@@ -434,7 +433,6 @@ function inicializarBiblioteca(data) {
     mostrarTodasCategorias();
   });
 
-
   const filtro = document.getElementById("categoriaFiltro");
   if (filtro) {
     filtro.addEventListener("change", filtrarPorCategoria);
@@ -444,8 +442,10 @@ function inicializarBiblioteca(data) {
 function poblarCategorias(libros) {
   const select = document.getElementById("categoriaFiltro");
   if (!select) return;
-  const categorias = [...new Set(libros.map(libro => libro.categoria))];
 
+  select.innerHTML = `<option value="">Todas las categorías</option>`;
+
+  const categorias = [...new Set(libros.map(libro => libro.categoria))];
   categorias.forEach(categoria => {
     const option = document.createElement("option");
     option.value = categoria;
@@ -458,12 +458,17 @@ function renderizarGaleria(librosFiltrados) {
   const galeria = document.getElementById("galeria");
   galeria.innerHTML = "";
 
-  librosFiltrados.forEach((libro, index) => {
+  librosFiltrados.forEach(libro => {
     const col = document.createElement("div");
     col.className = "col";
+
+    const libroData = JSON.stringify(libro).replace(/'/g, "&apos;");
+
     col.innerHTML = `
       <div class="card h-100">
-        <img src="${libro.imagen}" class="card-img-top" alt="${libro.titulo}" style="height: 250px; object-fit: cover; cursor: pointer" onclick="mostrarDetalle(${index})">
+        <img src="${libro.imagen}" class="card-img-top" alt="${libro.titulo}"
+             style="height: 250px; object-fit: cover; cursor: pointer"
+             data-libro='${libroData}' onclick="mostrarDetalleDesdeData(this)">
         <div class="card-body">
           <h5 class="card-title">${libro.titulo}</h5>
           <p class="card-text text-muted">${libro.autor} (${libro.anio})</p>
@@ -472,6 +477,23 @@ function renderizarGaleria(librosFiltrados) {
     `;
     galeria.appendChild(col);
   });
+}
+
+function mostrarDetalleDesdeData(elemento) {
+  const data = elemento.getAttribute('data-libro');
+  const libro = JSON.parse(data.replace(/&apos;/g, "'"));
+  mostrarDetalle(libro);
+}
+
+function mostrarDetalle(libro) {
+  document.getElementById("modalTitulo").textContent = libro.titulo;
+  document.getElementById("modalAutor").textContent = libro.autor;
+  document.getElementById("modalAnio").textContent = libro.anio;
+  document.getElementById("modalDescripcion").textContent = libro.descripcion;
+  document.getElementById("modalImagen").src = libro.imagen;
+
+  const modal = new bootstrap.Modal(document.getElementById("modalLibro"));
+  modal.show();
 }
 
 function filtrarPorCategoria() {
@@ -491,29 +513,17 @@ function mostrarTodasCategorias() {
   renderizarGaleria(libros);
 }
 
-function mostrarDetalle(index) {
-  const libro = libros[index];
-  document.getElementById("modalTitulo").textContent = libro.titulo;
-  document.getElementById("modalAutor").textContent = libro.autor;
-  document.getElementById("modalAnio").textContent = libro.anio;
-  document.getElementById("modalDescripcion").textContent = libro.descripcion;
-  document.getElementById("modalImagen").src = libro.imagen;
-
-  const modal = new bootstrap.Modal(document.getElementById("modalLibro"));
-  modal.show();
-}
-
 function validarFormulario() {
-    const nombre = document.getElementById("nombre").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
+  const nombre = document.getElementById("nombre").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const mensaje = document.getElementById("mensaje").value.trim();
 
-    if (!nombre || !email || !mensaje) {
-      alert("Por favor, completa todos los campos.");
-      return false;
-    }
-
-    alert("Mensaje enviado correctamente. ¡Gracias por contactarnos!");
-    document.getElementById("formularioContacto").reset();
+  if (!nombre || !email || !mensaje) {
+    alert("Por favor, completa todos los campos.");
     return false;
+  }
+
+  alert("Mensaje enviado correctamente. ¡Gracias por contactarnos!");
+  document.getElementById("formularioContacto").reset();
+  return false; 
 }
