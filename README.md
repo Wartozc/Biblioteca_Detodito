@@ -75,7 +75,7 @@ Estructura organizada en secciones:
 
 Este proyecto ha sido publicado con GitHub Pages y puede ser accedido desde:
 
-👉 **[https://github.com/Wartozc/Biblioteca_Detodito/](https://github.com/Wartozc/Biblioteca_Detodito/)**  
+👉 **[https://wartozc.github.io/Biblioteca_Detodito/#](https://wartozc.github.io/Biblioteca_Detodito/#)**  
 
 ---
 
